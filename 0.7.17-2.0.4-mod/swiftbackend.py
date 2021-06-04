@@ -87,18 +87,23 @@ Exception: %s""" % str(e))
                     options['os_project_domain_name'] = os.environ['SWIFT_PROJECT_DOMAIN_NAME']
                 if 'SWIFT_PROJECT_DOMAIN_ID' in os.environ:
                     options['os_project_domain_id'] = os.environ['SWIFT_PROJECT_DOMAIN_ID']
+                if 'SWIFT_TENANTNAME' in os.environ:
+                    options['os_tenant_name'] = os.environ['SWIFT_TENANTNAME']
                 if 'SWIFT_ENDPOINT_TYPE' in os.environ:
                     options['os_endpoint_type'] = os.environ['SWIFT_ENDPOINT_TYPE']
                 if 'SWIFT_USERID' in os.environ:
                     options['os_user_id'] = os.environ['SWIFT_USERID']
                 if 'SWIFT_TENANTID' in os.environ:
                     options['os_tenant_id'] = os.environ['SWIFT_TENANTID']
+                if 'SWIFT_REGIONNAME' in os.environ:
+                    options['os_region_name'] = os.environ['SWIFT_REGIONNAME']
+
         else:
             options['auth_version'] = '1'
         if 'SWIFT_TENANTNAME' in os.environ:
             options['os_tenant_name'] = os.environ['SWIFT_TENANTNAME']
         if 'SWIFT_REGIONNAME' in os.environ:
-           options['os_region_name'] = os.environ['SWIFT_REGIONNAME']
+            options['os_region_name'] = os.environ['SWIFT_REGIONNAME']
 
         # This folds the null prefix and all null parts, which means that:
         #  //MyContainer/ and //MyContainer are equivalent.
